@@ -1,90 +1,90 @@
-<！doctype html>
-<超文本标记语言>
+<!DOCTYPE html>
+<html>
 
-<头>
-    <元字符集="utf-8">
-    <元姓名=视口 内容="width=设备宽度，初始比例=1，最大比例=1，最小比例=1，用户可缩放=无，最小ui">
-    <元姓名="referrer" 内容="无引用程序">
-    <标题>播放器</标题>
-    <风格类型="文本/css">
-超文本标记语言，
-身体{
-            宽度:100%;
-            高度:100%;
-            边缘:自动;
-            溢出:隐藏的;
+<head>
+    <meta charset="utf-8">
+    <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui">
+    <meta name="referrer" content="no-referrer">
+    <title>播放器</title>
+    <style type="text/css">
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            overflow: hidden;
         }
 
-身体{
-            显示:弯曲;
+        body {
+            display: flex;
         }
 
-#mse{
-            弯曲:自动;
+        #mse {
+            flex: auto;
         }
-    </风格>
-    <链接rel="样式表" href="https://github.com/ap621/abc/blob/main/index.css">
-    <脚本类型="文本/javascript">
-文件。addEventListener('就绪',()=>{
-            Const resizeObserver=新的ResizeObserver(()=>{
-文件。getElementById('MSE').风格.高度=文档。身体.clientHeight+'px'
+    </style>
+    <link rel="stylesheet" href="https://github.com/ap621/abc/blob/main/index.css">
+    <script type="text/javascript">
+        document.addEventListener('ready', () => {
+            const resizeObserver = new ResizeObserver(() => {
+                document.getElementById('mse').style.height = document.body.clientHeight + 'px'
             })
-resizeObserver。观察(文件。身体)
+            resizeObserver.observe(document.body)
         })
-    </脚本>
-</头>
+    </script>
+</head>
 
-<身体>
-    <div身份标识="mse"></div>
-    <脚本src="https://unpkg.byted-static.com/xgplayer/3.0.10/dist/index.min.js" 字符集="utf-8"></脚本>
-    <脚本src="https://unpkg.byted-static.com/xgplayer-mp4/3.0.10/dist/index.min.js" 字符集="utf-8"></脚本>
-    <脚本类型="文本/javascript">
-        让 运动员=新的运动员({
-            身份标识:'MSE',
-            自动播放:正确,
-            体积:0.3,
-            URL:'https://v.cdnlz14.com/20240110/33620_b4af2ce7/index.m3u8',
-            海报:"https://lf3-static.bytednsdoc.com/obj/eden-cn/nupenuvpxnuvo/xgplayer_doc/poster.jpg",
-            playsinline:正确,
-            缩略图:{
-                pic_num:44,
-                宽度:160,
-                高度:90,
-                Col:10,
-                行:10,
-                URL:['https://lf3-static.bytednsdoc.com/obj/eden-cn/nupenuvpxnuvo/xgplayer_doc/xgplayer-demo-thumbnail.jpg'],
+<body>
+    <div id="mse"></div>
+    <script src="https://unpkg.byted-static.com/xgplayer/3.0.10/dist/index.min.js" charset="utf-8"></script>
+    <script src="https://unpkg.byted-static.com/xgplayer-mp4/3.0.10/dist/index.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        let player = new Player({
+            id: 'mse',
+            autoplay: true,
+            volume: 0.3,
+            url: 'https://v.cdnlz14.com/20240110/33620_b4af2ce7/index.m3u8',
+            poster: "https://lf3-static.bytednsdoc.com/obj/eden-cn/nupenuvpxnuvo/xgplayer_doc/poster.jpg",
+            playsinline: true,
+            thumbnail: {
+                pic_num: 44,
+                width: 160,
+                height: 90,
+                col: 10,
+                row: 10,
+                urls: ['https://lf3-static.bytednsdoc.com/obj/eden-cn/nupenuvpxnuvo/xgplayer_doc/xgplayer-demo-thumbnail.jpg'],
             },
-            丹木:{
-                评论:[{
-                    持续:15000,
-                    身份标识:'1',
-                    开始:3000,
-                    文本:'长弹幕长弹幕长弹幕长弹幕长弹幕',
-                    风格:{
+            danmu: {
+                comments: [{
+                    duration: 15000,
+                    id: '1',
+                    start: 3000,
+                    txt: '长弹幕长弹幕长弹幕长弹幕长弹幕',
+                    style: {
                         //弹幕自定义样式
-                        颜色:'#1C9DFF',
-                        fontsize:'20px',
-                        边境:'solid1px#1C9DFF',
-                        borderRadius:'50px',
-                        填充:'5px11px',
-                        backgroundColor:'rgba(255，255，255，0.1)'
+                        color: '#1C9DFF',
+                        fontSize: '20px',
+                        border: 'solid 1px #1C9DFF',
+                        borderRadius: '50px',
+                        padding: '5px 11px',
+                        backgroundColor: 'rgba(255, 255, 255, 0.1)'
                     }
                 }],
-                区域:{
-                    开始:0,
-                    结束:1
+                area: {
+                    start: 0,
+                    end: 1
                 }
             },
-            高度：窗口。innerHeight,
-            宽度：窗口。innerWidth,
-            插件:[Mp4Plugin],
-            mp4plugin:{
-                maxBufferLength:50,
-                minBufferLength:10,
+            height: window.innerHeight,
+            width: window.innerWidth,
+            plugins: [Mp4Plugin],
+            mp4plugin: {
+                maxBufferLength: 50,
+                minBufferLength: 10,
             }
         });
-        //player.emit('resourceReady'，[{name：'超清'，定义：'1080p'，URL：'https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-720p.mp4'}，{name：'高清'，定义：'720p'，URL：'https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-480p.mp4'}，{name：'标清'，定义：'480p'，url：'https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-360p.mp4'}])；
-    </脚本>
-</身体>
+        //player.emit('resourceReady', [{name: '超清',definition: '1080p',url: 'https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-720p.mp4'}, {name: '高清',definition: '720p',url: 'https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-480p.mp4'}, {name: '标清',definition: '480p',url: 'https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-360p.mp4'}]);
+    </script>
+</body>
 
-</超文本标记语言>
+</html>
