@@ -1,0 +1,90 @@
+<！doctype html>
+<超文本标记语言>
+
+<头>
+    <元字符集="utf-8">
+    <元姓名=视口 内容="width=设备宽度，初始比例=1，最大比例=1，最小比例=1，用户可缩放=无，最小ui">
+    <元姓名="referrer" 内容="无引用程序">
+    <标题>播放器</标题>
+    <风格类型="文本/css">
+超文本标记语言，
+身体{
+            宽度:100%;
+            高度:100%;
+            边缘:自动;
+            溢出:隐藏的;
+        }
+
+身体{
+            显示:弯曲;
+        }
+
+#mse{
+            弯曲:自动;
+        }
+    </风格>
+    <链接rel="样式表" href="https://github.com/ap621/abc/blob/main/index.css">
+    <脚本类型="文本/javascript">
+文件。addEventListener('就绪',()=>{
+            Const resizeObserver=新的ResizeObserver(()=>{
+文件。getElementById('MSE').风格.高度=文档。身体.clientHeight+'px'
+            })
+resizeObserver。观察(文件。身体)
+        })
+    </脚本>
+</头>
+
+<身体>
+    <div身份标识="mse"></div>
+    <脚本src="https://unpkg.byted-static.com/xgplayer/3.0.10/dist/index.min.js" 字符集="utf-8"></脚本>
+    <脚本src="https://unpkg.byted-static.com/xgplayer-mp4/3.0.10/dist/index.min.js" 字符集="utf-8"></脚本>
+    <脚本类型="文本/javascript">
+        让 运动员=新的运动员({
+            身份标识:'MSE',
+            自动播放:正确,
+            体积:0.3,
+            URL:'https://v.cdnlz14.com/20240110/33620_b4af2ce7/index.m3u8',
+            海报:"https://lf3-static.bytednsdoc.com/obj/eden-cn/nupenuvpxnuvo/xgplayer_doc/poster.jpg",
+            playsinline:正确,
+            缩略图:{
+                pic_num:44,
+                宽度:160,
+                高度:90,
+                Col:10,
+                行:10,
+                URL:['https://lf3-static.bytednsdoc.com/obj/eden-cn/nupenuvpxnuvo/xgplayer_doc/xgplayer-demo-thumbnail.jpg'],
+            },
+            丹木:{
+                评论:[{
+                    持续:15000,
+                    身份标识:'1',
+                    开始:3000,
+                    文本:'长弹幕长弹幕长弹幕长弹幕长弹幕',
+                    风格:{
+                        //弹幕自定义样式
+                        颜色:'#1C9DFF',
+                        fontsize:'20px',
+                        边境:'solid1px#1C9DFF',
+                        borderRadius:'50px',
+                        填充:'5px11px',
+                        backgroundColor:'rgba(255，255，255，0.1)'
+                    }
+                }],
+                区域:{
+                    开始:0,
+                    结束:1
+                }
+            },
+            高度：窗口。innerHeight,
+            宽度：窗口。innerWidth,
+            插件:[Mp4Plugin],
+            mp4plugin:{
+                maxBufferLength:50,
+                minBufferLength:10,
+            }
+        });
+        //player.emit('resourceReady'，[{name：'超清'，定义：'1080p'，URL：'https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-720p.mp4'}，{name：'高清'，定义：'720p'，URL：'https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-480p.mp4'}，{name：'标清'，定义：'480p'，url：'https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-360p.mp4'}])；
+    </脚本>
+</身体>
+
+</超文本标记语言>
